@@ -24,7 +24,7 @@ today = str(date.today()).split('-')
 theme_name_list = sg.theme_list()
 
 while True:
-    sg.theme(theme_name_list[random.randint(0, len(theme_name_list))])
+    sg.theme(theme_name_list[random.randint(0, len(theme_name_list)-1)])
     #define layout
     layout=[
         [sg.Text('Enter the date',size=(20, 1), font='Ubuntu',justification='left')],

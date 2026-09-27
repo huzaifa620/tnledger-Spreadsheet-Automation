@@ -1,0 +1,47 @@
+{
+  "_help": "Each entry is one engine the VA can launch from va_hub.py. To add a new engine: drop its folder next to the others and add an entry here. Paths are relative to this file. 'exe' is used when it exists, otherwise 'script' is run with Python. 'sheet_id' is the Google Sheet the engine writes to (used for the Open Sheet button).",
+  "engines": [
+    {
+      "name": "TN Ledger - Probate (Court Notices)",
+      "category": "Probate",
+      "description": "One date. Pulls probate court notices for Cheatham, Montgomery and Davidson from tnledger.com.",
+      "cwd": "tnledger_courts",
+      "script": "tnledger_courts/main.py",
+      "exe": "tnledger_courts/output/tnledger_courts.exe",
+      "sheet_id": "1KIcOYi8gB5ZvHEXRGopqineBlbDx1sH7fAxRyCPROB0"
+    },
+    {
+      "name": "TN Ledger - Foreclosures",
+      "category": "Foreclosure",
+      "description": "One date. Pulls foreclosure notices (borrower, address, sale details) from tnledger.com.",
+      "cwd": "engines/tnledger_foreclosure",
+      "script": "engines/tnledger_foreclosure/main.py",
+      "sheet_id": "1DInbhKwN0FhePxkronq5mfp6gL6fmcSicn6Y4wE27Z0"
+    },
+    {
+      "name": "TN Ledger - Foreclosure Comparison",
+      "category": "Foreclosure",
+      "description": "Date range. Walks back through tnledger.com foreclosure days and flags repeats / likely sold properties.",
+      "cwd": "engines/tnledger_foreclosure_comparison",
+      "script": "engines/tnledger_foreclosure_comparison/main.py",
+      "sheet_id": "1k0j25pNfx6hjKmANxjEPLkLduWuSa3-csb8pTU17TvQ"
+    },
+    {
+      "name": "TN Public Notice - Probate & Foreclosure",
+      "category": "Probate / Foreclosure",
+      "description": "Date range + county (Montgomery, Davidson, Robertson, Rutherford, Wilson). Scrapes tnpublicnotice.com.",
+      "cwd": "tnpublic_notice_tenessee",
+      "script": "tnpublic_notice_tenessee/main.py",
+      "exe": "tnpublic_notice_tenessee/output/tnpublic_notice_tenessee.exe",
+      "sheet_id": "1278HJam-TruXlKrlHA3mdTHtUEljeK-xEC4co0kytaA"
+    },
+    {
+      "name": "TN Courts - Civil Cases (tncrtinfo)",
+      "category": "Court Cases",
+      "description": "Date range + county + court (General Sessions / Circuit). Optional subscription login. Scrapes tncrtinfo.com.",
+      "cwd": "engines/tncourts_civil",
+      "script": "engines/tncourts_civil/main.py",
+      "sheet_id": "1UJp8UvQFYgPCvHm48AjtX30GxTbg93CPzjX2HrKdgaA"
+    }
+  ]
+}
